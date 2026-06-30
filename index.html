@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Don't put AI at the centre. Put people there. | Shreye K. Dhaon</title>
+<meta name="description" content="A practitioner's framework for AI transformation through the lens of People, Process & Technology — anchored in Design Thinking, by Shreye K. Dhaon.">
+<meta property="og:title" content="Don't put AI at the centre. Put people there.">
+<meta property="og:description" content="A practitioner's framework for AI transformation — by Shreye K. Dhaon, Transformation Programme Director.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:ital@1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #1FAE7F;
+    --teal-dark: #0F6E56;
+    --teal-light: #E1F5EE;
+    --purple: #7F77DD;
+    --purple-dark: #3C3489;
+    --purple-light: #EEEDFE;
+    --amber: #EF9F27;
+    --amber-dark: #854F0B;
+    --amber-light: #FAEEDA;
+    --pink: #D4537E;
+    --blue: #378ADD;
+    --ink: #14161A;
+    --ink-soft: #4B5160;
+    --ink-muted: #8A8F99;
+    --paper: #F7F8FA;
+    --white: #FFFFFF;
+    --line: #E4E6EA;
+    --dark-bg: #0B0F14;
+    --dark-card: #161B22;
+    --dark-border: #232932;
+    --dark-text: #E8EAED;
+    --dark-muted: #9CA3AF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 28px; }
+
+  section { padding: 88px 0; }
+  section.tight { padding: 64px 0; }
+
+  .dark-section { background: var(--dark-bg); color: var(--dark-text); }
+  .paper-section { background: var(--paper); }
+
+  .eyebrow {
+    font-size: 12.5px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--teal-dark); margin-bottom: 18px;
+  }
+  .dark-section .eyebrow { color: var(--teal); }
+
+  h1 {
+    font-size: clamp(34px, 5.5vw, 58px); font-weight: 800; line-height: 1.12;
+    letter-spacing: -0.01em; color: var(--ink); margin-bottom: 24px;
+  }
+  .dark-section h1 { color: var(--white); }
+
+  h2 {
+    font-size: clamp(24px, 3.6vw, 32px); font-weight: 800; line-height: 1.2;
+    margin-bottom: 32px; color: var(--ink);
+  }
+  .dark-section h2 { color: var(--white); }
+
+  h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+
+  p { color: var(--ink-soft); font-size: 16.5px; line-height: 1.65; }
+  .dark-section p { color: var(--dark-muted); }
+
+  .lede {
+    font-size: clamp(18px, 2.2vw, 21px); color: var(--ink-soft); max-width: 620px;
+    margin-bottom: 36px;
+  }
+  .dark-section .lede { color: var(--dark-muted); }
+
+  .credential-box {
+    display: inline-block; border: 1px solid var(--line); border-radius: 12px;
+    padding: 18px 24px; background: var(--white);
+  }
+  .credential-box .name { font-size: 16px; font-weight: 700; color: var(--ink); }
+  .credential-box .role { font-size: 13.5px; color: var(--ink-muted); margin-top: 6px; }
+
+  nav.top-nav {
+    position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(8px); border-bottom: 1px solid var(--line);
+  }
+  nav.top-nav .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 14px; padding-bottom: 14px; max-width: 880px;
+  }
+  nav.top-nav .brand { font-size: 14px; font-weight: 700; color: var(--ink); }
+  nav.top-nav .links { display: flex; gap: 22px; }
+  nav.top-nav .links a {
+    font-size: 13.5px; color: var(--ink-soft); text-decoration: none; font-weight: 500;
+  }
+  nav.top-nav .links a:hover { color: var(--teal-dark); }
+
+  .quote-block {
+    font-family: 'Source Serif 4', Georgia, serif; font-style: italic;
+    font-size: clamp(22px, 3.4vw, 30px); line-height: 1.5; color: var(--white);
+    max-width: 760px; margin: 0 auto 48px; text-align: center;
+  }
+
+  .stat-row { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+  .stat-card {
+    flex: 1; min-width: 180px; background: var(--dark-card); border: 1px solid var(--dark-border);
+    border-radius: 14px; padding: 28px 20px; text-align: center;
+  }
+  .stat-num { font-size: 40px; font-weight: 800; margin-bottom: 10px; }
+  .stat-label { font-size: 13.5px; color: var(--dark-muted); line-height: 1.5; }
+
+  .closing-line {
+    text-align: center; max-width: 720px; margin: 40px auto 0; font-size: 16.5px;
+    color: var(--dark-muted);
+  }
+
+  .framework-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 28px; }
+  .fw-card {
+    background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 26px 24px;
+  }
+  .fw-dot { width: 10px; height: 10px; border-radius: 50%; margin-bottom: 18px; }
+  .fw-card .tag { font-size: 16px; font-weight: 800; letter-spacing: 0.02em; margin-bottom: 4px; }
+  .fw-card .subtitle { font-size: 13px; font-style: italic; color: var(--ink-muted); margin-bottom: 14px; }
+  .fw-card p { font-size: 14px; }
+  .fw-note { font-size: 14.5px; font-style: italic; color: var(--ink-muted); text-align: center; }
+
+  .people-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .people-card { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 22px 20px; }
+  .people-card h3 { color: var(--teal-dark); font-size: 14.5px; }
+  .people-card p { font-size: 13.5px; }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+  .split-divider { display: none; }
+  .split-block .label-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .split-block .label-dot { width: 11px; height: 11px; border-radius: 50%; }
+  .split-block .label-text { font-size: 15.5px; font-weight: 800; }
+  .split-block .item { margin-bottom: 18px; }
+  .split-block .item-title { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+  .split-block .item-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+
+  .stats-mini { display: flex; gap: 18px; flex-wrap: wrap; }
+  .stats-mini .stat-card { flex: 1; min-width: 160px; }
+
+  .compare-row { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+  .compare-row .bad, .compare-row .good {
+    flex: 1; border-radius: 10px; padding: 14px 18px; font-size: 13.5px;
+  }
+  .compare-row .bad { background: #FCEBEB; color: #791F1F; }
+  .compare-row .good { background: #EAF3DE; color: #27500A; }
+  .compare-row .arrow { color: var(--ink-muted); font-size: 18px; flex: 0 0 20px; text-align: center; }
+
+  .stages-strip { display: flex; gap: 14px; margin-bottom: 28px; flex-wrap: wrap; }
+  .stage-card {
+    flex: 1; min-width: 130px; background: var(--dark-card); border: 1px solid var(--dark-border);
+    border-radius: 14px; padding: 24px 14px; text-align: center;
+  }
+  .stage-card .dot { width: 12px; height: 12px; border-radius: 50%; margin: 0 auto 16px; }
+  .stage-card .num { font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+  .stage-card .name { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+  .stage-card .desc { font-size: 12px; color: var(--dark-muted); line-height: 1.5; }
+
+  .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+  .test-card { background: var(--white); border: 1px solid var(--line); border-radius: 12px; padding: 18px 18px; }
+  .test-card .ttl { font-size: 13.5px; font-weight: 700; color: var(--pink); margin-bottom: 6px; }
+  .test-card .desc { font-size: 12.5px; color: var(--ink-soft); line-height: 1.5; }
+
+  .loop-strip { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+  .loop-card {
+    flex: 1; min-width: 130px; background: var(--dark-card); border: 1px solid var(--dark-border);
+    border-radius: 14px; padding: 20px 12px; text-align: center;
+  }
+  .loop-card .dot { width: 10px; height: 10px; border-radius: 50%; margin: 0 auto 12px; }
+  .loop-card .name { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+  .loop-card .desc { font-size: 11px; color: var(--dark-muted); }
+  .loop-arrow { color: #4B5563; font-size: 16px; flex: 0 0 16px; text-align: center; }
+  .loop-repeat { text-align: center; font-size: 13.5px; font-style: italic; color: var(--teal); margin-bottom: 36px; }
+
+  .govern-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  .govern-col .ttl { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; margin-bottom: 8px; }
+  .govern-col .desc { font-size: 12.5px; color: var(--dark-muted); line-height: 1.6; }
+
+  .principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .principles-grid.row2 { grid-template-columns: repeat(2, 1fr); margin-top: 20px; }
+  .principle-card { background: var(--white); border: 1px solid var(--line); border-radius: 14px; padding: 24px 22px; }
+  .principle-card .num { font-size: 28px; font-weight: 800; margin-bottom: 10px; }
+  .principle-card .ttl { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+  .principle-card .desc { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+
+  .footer-cta {
+    text-align: center; border: 1px solid var(--dark-border); border-radius: 14px;
+    padding: 28px 32px; max-width: 700px; margin: 40px auto 0; background: var(--dark-card);
+  }
+  .footer-cta .name { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+  .footer-cta .contact { font-size: 13px; color: var(--dark-muted); margin-bottom: 10px; }
+  .footer-cta .contact a { color: var(--dark-muted); text-decoration: none; }
+  .footer-cta .tags { font-size: 12px; color: #6B7280; }
+
+  .practice-note {
+    background: var(--amber-light); border-radius: 10px; padding: 16px 18px; font-size: 13.5px;
+    color: #5B4108; line-height: 1.55; margin-bottom: 16px;
+  }
+  .practice-note strong { color: #3D2C04; }
+
+  footer.site-footer {
+    text-align: center; padding: 36px 0; font-size: 12.5px; color: var(--ink-muted);
+    border-top: 1px solid var(--line);
+  }
+
+  @media (max-width: 760px) {
+    section { padding: 56px 0; }
+    .framework-grid, .people-grid, .principles-grid, .test-grid, .govern-grid { grid-template-columns: 1fr; }
+    .principles-grid.row2 { grid-template-columns: 1fr; }
+    .split { grid-template-columns: 1fr; gap: 32px; }
+    .stat-row { flex-direction: column; }
+    .stages-strip { flex-direction: column; }
+    .loop-strip { flex-direction: column; }
+    .loop-arrow { transform: rotate(90deg); }
+    .compare-row { flex-direction: column; align-items: stretch; }
+    .compare-row .arrow { transform: rotate(90deg); }
+    nav.top-nav .links { gap: 14px; }
+    nav.top-nav .links a { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <div class="wrap">
+    <div class="brand">Shreye K. Dhaon</div>
+    <div class="links">
+      <a href="#framework">Framework</a>
+      <a href="#design-thinking">Design thinking</a>
+      <a href="#philosophy">Philosophy</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="eyebrow">Point of view</div>
+    <h1>Don't put AI at the centre.<br>Put people there.</h1>
+    <p class="lede">A practitioner's framework for AI transformation through the lens of People, Process &amp; Technology — anchored in Design Thinking.</p>
+    <div class="credential-box">
+      <div class="name">Shreye K. Dhaon &nbsp;·&nbsp; MBA · PMP · CSM</div>
+      <div class="role">Transformation Programme Director · AI Practitioner · Design Thinking Facilitator</div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="wrap">
+    <div class="eyebrow">The central argument</div>
+    <p class="quote-block">&#x201C;Most AI transformations fail not because the technology doesn&#x2019;t work &#x2014; but because the people weren&#x2019;t brought along.&#x201D;</p>
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-num" style="color:#2DD4A7;">70%</div>
+        <div class="stat-label">of digital transformations fail to meet objectives</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:#A78BFA;">#1</div>
+        <div class="stat-label">failure reason: people &amp; culture, not technology</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:#FBBF24;">3&times;</div>
+        <div class="stat-label">higher success rate when change management is strong</div>
+      </div>
+    </div>
+    <p class="closing-line">The critical success factors for AI transformation live in culture, behaviour, and trust — long before they live in algorithms.</p>
+  </div>
+</section>
+
+<section id="framework" class="paper-section">
+  <div class="wrap">
+    <div class="eyebrow">Critical success factors</div>
+    <h2>The PPT framework for AI transformation</h2>
+    <div class="framework-grid">
+      <div class="fw-card">
+        <div class="fw-dot" style="background:var(--teal-dark);"></div>
+        <div class="tag" style="color:var(--teal-dark);">People</div>
+        <div class="subtitle">Culture, capability &amp; behaviour change</div>
+        <p>AI transformation lives or dies on whether people trust it, understand it, and choose to use it. Culture change is not a communications plan — it is a sustained behaviour change programme.</p>
+      </div>
+      <div class="fw-card">
+        <div class="fw-dot" style="background:var(--purple-dark);"></div>
+        <div class="tag" style="color:var(--purple-dark);">Process</div>
+        <div class="subtitle">Redesign before you automate</div>
+        <p>AI doesn't transform broken processes — it accelerates them. Process redesign must precede AI implementation. The question is: what should the process become, not what can AI automate?</p>
+      </div>
+      <div class="fw-card">
+        <div class="fw-dot" style="background:var(--amber-dark);"></div>
+        <div class="tag" style="color:var(--amber-dark);">Technology</div>
+        <div class="subtitle">Chosen last, not first</div>
+        <p>Technology is the enabler — not the driver. Chosen after people and process are understood. The right AI solution fits the human need, not the most sophisticated option available.</p>
+      </div>
+    </div>
+    <p class="fw-note">All three dimensions must move together. Transforming one while neglecting the others is the most common cause of partial adoption and wasted investment.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">People &mdash; critical success factors</div>
+    <h2>What makes the human side of AI transformation succeed</h2>
+    <div class="people-grid">
+      <div class="people-card"><h3>Executive championship</h3><p>Visible, sustained leadership sponsorship. AI must be a strategic priority, not an IT project.</p></div>
+      <div class="people-card"><h3>AI literacy at every level</h3><p>Not technical training — contextual capability. Every role needs to understand what AI means for their work.</p></div>
+      <div class="people-card"><h3>Fear-free change narrative</h3><p>Address the &#x2018;will AI take my job?&#x2019; question directly. Reframe AI as augmentation, not replacement.</p></div>
+      <div class="people-card"><h3>Change champions network</h3><p>Identify and embed advocates across every team to model new behaviours and create psychological safety.</p></div>
+      <div class="people-card"><h3>Workforce planning for the AI era</h3><p>Redesign roles, not just retrain people. Identify what humans will do that AI cannot.</p></div>
+      <div class="people-card"><h3>Incentivise experimentation</h3><p>Recognise and reward those who experiment and learn — not just those who succeed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="paper-section">
+  <div class="wrap">
+    <div class="eyebrow">Process &amp; technology &mdash; critical success factors</div>
+    <h2>Design the process first. Choose the technology last.</h2>
+    <div class="split">
+      <div class="split-block">
+        <div class="label-row"><div class="label-dot" style="background:var(--purple-dark);"></div><div class="label-text" style="color:var(--purple-dark);">Process</div></div>
+        <div class="item"><div class="item-title">Process discovery before automation</div><div class="item-desc">Map current-state with empathy. Understand workarounds and working norms to understand the as-is.</div></div>
+        <div class="item"><div class="item-title">Governance &amp; ethics framework</div><div class="item-desc">Define where AI decides, where it recommends, and where humans always lead.</div></div>
+        <div class="item"><div class="item-title">Data quality as a prerequisite</div><div class="item-desc">AI is only as good as its inputs. Data governance is a process transformation, not a technical one.</div></div>
+        <div class="item"><div class="item-title">Compliance &amp; regulatory alignment</div><div class="item-desc">Embed GDPR, audit trails, and essential regulatory requirements from day one — not as an afterthought.</div></div>
+      </div>
+      <div class="split-block">
+        <div class="label-row"><div class="label-dot" style="background:var(--amber-dark);"></div><div class="label-text" style="color:var(--amber-dark);">Technology</div></div>
+        <div class="item"><div class="item-title">Build-buy-partner strategy</div><div class="item-desc">Establish what the organisation needs to own vs. what a vendor can deliver better and faster.</div></div>
+        <div class="item"><div class="item-title">AI Centre of Excellence</div><div class="item-desc">A central body governing standards, sharing patterns, and preventing fragmented AI sprawl.</div></div>
+        <div class="item"><div class="item-title">Phased rollout over big-bang</div><div class="item-desc">Start with high-value, low-risk use cases to build confidence and generate visible wins.</div></div>
+        <div class="item"><div class="item-title">Measure outcomes, not outputs</div><div class="item-desc">Define AI success in measurable goals (SMART) — decision quality, time saved, error reduction — not technical ones.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="design-thinking" class="dark-section">
+  <div class="wrap">
+    <div class="eyebrow">Section 02</div>
+    <h1 style="font-size:clamp(28px,4.5vw,44px);">Design thinking as the transformation engine</h1>
+    <p class="lede" style="max-width:680px;">Why keeping the end user — not the AI — at the centre changes everything about how transformation succeeds.</p>
+    <div class="stat-row" style="margin-top:36px;">
+      <div class="stat-card">
+        <div class="stat-num" style="color:#2DD4A7;">200+</div>
+        <div class="stat-label">professionals trained in Design Thinking at PwC India</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:#A78BFA; font-size:28px;">EY Labs</div>
+        <div class="stat-label">weekend intensive workshop — hands-on prototyping by teams</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" style="color:#FBBF24; font-size:28px;">Live</div>
+        <div class="stat-label">Design Thinking tools applied with clients across multiple sectors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="paper-section">
+  <div class="wrap">
+    <div class="eyebrow">Design thinking applied to AI transformation</div>
+    <h2>What changes when you centre the human, not the AI</h2>
+    <div class="compare-row">
+      <div class="bad">&#10005;&nbsp; Start with what AI can do</div>
+      <div class="arrow">&#8594;</div>
+      <div class="good">&#10003;&nbsp; Start with what frustrates users today. Empathise with users.</div>
+    </div>
+    <div class="compare-row">
+      <div class="bad">&#10005;&nbsp; Select technology first</div>
+      <div class="arrow">&#8594;</div>
+      <div class="good">&#10003;&nbsp; Map the journey before choosing solutions using user journey maps and other DT tools.</div>
+    </div>
+    <div class="compare-row">
+      <div class="bad">&#10005;&nbsp; Build, then ask for feedback</div>
+      <div class="arrow">&#8594;</div>
+      <div class="good">&#10003;&nbsp; Prototype fast, test early, fail quickly and learn cheaply.</div>
+    </div>
+    <div class="compare-row">
+      <div class="bad">&#10005;&nbsp; Go-live is the finish line</div>
+      <div class="arrow">&#8594;</div>
+      <div class="good">&#10003;&nbsp; Go-live begins the feedback loop. Build feedback loops into the designed solution.</div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="wrap">
+    <div class="eyebrow">The design thinking process</div>
+    <h2 style="color:#FFFFFF;">Five stages — applied to AI transformation</h2>
+    <div class="stages-strip">
+      <div class="stage-card"><div class="dot" style="background:#2DD4A7;"></div><div class="num" style="color:#2DD4A7;">01</div><div class="name">Empathise</div><div class="desc">Understand before you design</div></div>
+      <div class="stage-card"><div class="dot" style="background:#A78BFA;"></div><div class="num" style="color:#A78BFA;">02</div><div class="name">Define</div><div class="desc">Sharpen the human problem statement</div></div>
+      <div class="stage-card"><div class="dot" style="background:#60A5FA;"></div><div class="num" style="color:#60A5FA;">03</div><div class="name">Ideate</div><div class="desc">Generate, diverge, then converge</div></div>
+      <div class="stage-card"><div class="dot" style="background:#FBBF24;"></div><div class="num" style="color:#FBBF24;">04</div><div class="name">Prototype</div><div class="desc">Make it tangible, cheaply and fast</div></div>
+      <div class="stage-card"><div class="dot" style="background:#F472B6;"></div><div class="num" style="color:#F472B6;">05</div><div class="name">Test</div><div class="desc">Learn from real users, refine, repeat</div></div>
+    </div>
+    <p style="text-align:center; font-size:14px; font-style:italic; color:var(--dark-muted);">Each stage produces tangible artefacts that make the work visible, shareable, and actionable.</p>
+  </div>
+</section>
+
+<section class="paper-section">
+  <div class="wrap">
+    <div class="eyebrow">Stages 01 &amp; 02 &mdash; Empathise &amp; Define</div>
+    <h2>Listen deeply. Then define the right problem.</h2>
+    <div class="split">
+      <div class="split-block">
+        <div class="label-row"><div class="label-dot" style="background:var(--teal-dark);"></div><div class="label-text" style="color:var(--teal-dark);">Empathise</div></div>
+        <p style="margin-bottom:14px;">Sit with the people who do the work. Shadow, interview, observe. Don't ask what they want from AI — ask what drains them, where they create workarounds, what they wish someone would fix.</p>
+        <p style="font-size:12.5px; color:var(--ink-muted); margin-bottom:18px;"><em>Activities:</em> 1:1 empathy interviews · Observation · Contextual inquiry · Day-in-the-life exercises · Persona creation</p>
+      </div>
+      <div class="split-block">
+        <div class="label-row"><div class="label-dot" style="background:var(--purple-dark);"></div><div class="label-text" style="color:var(--purple-dark);">Define</div></div>
+        <p style="margin-bottom:14px;">Synthesise the raw insight. Build user personas representing the real spectrum of people affected. Create current-state journey maps to reveal every friction point. Then craft point-of-view statements and "how might we" questions that reframe the AI challenge in human terms.</p>
+        <p style="font-size:12.5px; color:var(--ink-muted); margin-bottom:18px;"><em>Activities:</em> Affinity mapping · PoV statements · HMW framing</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Stages 03 &amp; 04 &mdash; Ideate &amp; Prototype</div>
+    <h2>Generate boldly. Build cheaply. Learn fast.</h2>
+    <div class="split">
+      <div class="split-block">
+        <div class="label-row"><div class="label-dot" style="background:var(--blue);"></div><div class="label-text" style="color:#185FA5;">Ideate &amp; analyse</div></div>
+        <p style="margin-bottom:14px;">With the HMW questions as fuel, cross-functional teams generate a wide range of ideas — some incremental, some radical. Then apply structured analysis to narrow: effort/impact mapping, feasibility scoring, AI-appropriateness assessment.</p>
+      </div>
+      <div class="split-block">
+        <div class="label-row"><div class="label-dot" style="background:var(--amber);"></div><div class="label-text" style="color:var(--amber-dark);">Prototype</div></div>
+        <p style="margin-bottom:14px;">A prototype is not a finished product — it is a learning device. Make the concept tangible enough that a real user can interact with it and react honestly.</p>
+        <div class="practice-note"><strong>From practice:</strong> in the EY Labs workshop I facilitated, teams produced physical prototypes in hours. The insights from users handling those prototypes shaped final solutions more than any requirements document.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="paper-section">
+  <div class="wrap">
+    <div class="eyebrow">Stage 05 &mdash; Test</div>
+    <h2>Get real feedback from real users — and have the courage to change course.</h2>
+    <div class="test-grid">
+      <div class="test-card"><div class="ttl">Moderated usability testing</div><div class="desc">Facilitator watches a user complete real tasks using a think-aloud protocol.</div></div>
+      <div class="test-card"><div class="ttl">Unmoderated testing</div><div class="desc">Users interact independently, capturing natural behaviour without the observer effect.</div></div>
+      <div class="test-card"><div class="ttl">A/B concept testing</div><div class="desc">Two versions tested with different user groups, removing preference bias.</div></div>
+      <div class="test-card"><div class="ttl">Co-creation workshops</div><div class="desc">Users become active designers, building ownership of the solution.</div></div>
+      <div class="test-card"><div class="ttl">Desirability testing</div><div class="desc">Surfaces emotional and trust dimensions that functional testing misses.</div></div>
+      <div class="test-card"><div class="ttl">Diary studies</div><div class="desc">Users document experience over days or weeks, revealing patterns over time.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section">
+  <div class="wrap">
+    <div class="eyebrow">The continuous feedback loop</div>
+    <h2 style="color:#FFFFFF;">Built in from day one — not added after go-live.</h2>
+    <div class="loop-strip">
+      <div class="loop-card"><div class="dot" style="background:#2DD4A7;"></div><div class="name">Deploy</div><div class="desc">Release to real users</div></div>
+      <div class="loop-arrow">&#8594;</div>
+      <div class="loop-card"><div class="dot" style="background:#A78BFA;"></div><div class="name">Measure</div><div class="desc">Adoption KPIs</div></div>
+      <div class="loop-arrow">&#8594;</div>
+      <div class="loop-card"><div class="dot" style="background:#60A5FA;"></div><div class="name">Listen</div><div class="desc">User feedback</div></div>
+      <div class="loop-arrow">&#8594;</div>
+      <div class="loop-card"><div class="dot" style="background:#FBBF24;"></div><div class="name">Synthesise</div><div class="desc">Cluster insights</div></div>
+      <div class="loop-arrow">&#8594;</div>
+      <div class="loop-card"><div class="dot" style="background:#F472B6;"></div><div class="name">Refine</div><div class="desc">Improve solution</div></div>
+    </div>
+    <p class="loop-repeat">&#8635; The loop repeats — each cycle brings the solution closer to what users actually need</p>
+    <div class="govern-grid">
+      <div class="govern-col"><div class="ttl" style="color:#2DD4A7;">MEASURE</div><div class="desc">Adoption rate · Task time · Error rate · NPS</div></div>
+      <div class="govern-col"><div class="ttl" style="color:#A78BFA;">LISTEN</div><div class="desc">Pulse surveys · Office hours · Champion reports · Ticket patterns</div></div>
+      <div class="govern-col"><div class="ttl" style="color:#FBBF24;">SYNTHESISE</div><div class="desc">Affinity clustering · Iteration backlog · Sprint review with users</div></div>
+      <div class="govern-col"><div class="ttl" style="color:#60A5FA;">GOVERN</div><div class="desc">AI CoE cadence · Model retraining · Ethics audit · Exec dashboard</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="philosophy" class="paper-section">
+  <div class="wrap">
+    <div class="eyebrow">Transformation philosophy</div>
+    <h2>Five principles that should not be compromised</h2>
+    <div class="principles-grid">
+      <div class="principle-card"><div class="num" style="color:var(--teal-dark);">01</div><div class="ttl">Empathy before architecture</div><div class="desc">You cannot design a good solution for a user you don't understand. Every transformation begins with listening.</div></div>
+      <div class="principle-card"><div class="num" style="color:var(--purple-dark);">02</div><div class="ttl">Small wins build big trust</div><div class="desc">AI scepticism is earned. A visible, useful win in the first 90 days changes minds faster than any comms plan.</div></div>
+      <div class="principle-card"><div class="num" style="color:#185FA5;">03</div><div class="ttl">Failure at prototype is the goal</div><div class="desc">Design programmes where it's safe to test ideas and find they don't work. Learning at prototype is far cheaper than at deployment.</div></div>
+    </div>
+    <div class="principles-grid row2">
+      <div class="principle-card"><div class="num" style="color:var(--amber-dark);">04</div><div class="ttl">Champions, not managers</div><div class="desc">Transformation is not imposed from the top — it grows from within. Invest in people who will carry change forward after the programme ends.</div></div>
+      <div class="principle-card"><div class="num" style="color:var(--pink);">05</div><div class="ttl">Measure what matters to humans</div><div class="desc">Model accuracy is not a transformation metric. Time saved, decisions improved, trust increased — those tell you if it worked.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="dark-section">
+  <div class="wrap" style="text-align:center;">
+    <div class="eyebrow">The bottom line</div>
+    <h1 style="font-size:clamp(28px,4.5vw,42px);">AI is not the transformation.<br>AI enables the transformation.</h1>
+    <p class="lede" style="margin:0 auto 0; text-align:center;">The transformation is what happens when people change how they work, how they decide, and how they trust — and that requires Design Thinking, not just data science.</p>
+    <div class="footer-cta">
+      <div class="name">Shreye K. Dhaon &nbsp;·&nbsp; MBA · PMP · CSM · Google AI Certified</div>
+      <div class="contact">
+        <a href="mailto:shreye.dhaon@gmail.com">shreye.dhaon@gmail.com</a> &nbsp;·&nbsp;
+        +353 87 430 2025 &nbsp;·&nbsp;
+        <a href="https://linkedin.com/in/shreye-krishna-dhaon" target="_blank" rel="noopener">linkedin.com/in/shreye-krishna-dhaon</a> &nbsp;·&nbsp;
+        Dublin, Ireland
+      </div>
+      <div class="tags">Open to transformation leadership roles · Remote across Ireland &amp; UK · Available immediately</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  &copy; 2026 Shreye K. Dhaon. A practitioner's point of view on AI transformation.
+</footer>
+
+</body>
+</html>
